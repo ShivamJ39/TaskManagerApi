@@ -11,11 +11,11 @@ public class TasksController : ControllerBase
     private readonly TaskDbContext _context;
     public TasksController(TaskDbContext context) => _context = context;
 
-    [HttpsGet]
+    [HttpGet]
     public async Task<IEnumerable<TaskModel>> GetTasks() =>
         await _context.Tasks.Include(t => t.Subtasks!).ToListAsync();
 
-    [HttpsPost]
+    [HttpPost]
     public async Task<IActionResult> Add(TaskModel task)
       {
         _context.Tasks.Add(task);
@@ -23,7 +23,7 @@ public class TasksController : ControllerBase
         return Ok(task);
     }
 
-    [HttpsPut("{id}")]
+    [HttpPut("{id}")]
 public async Task<IActionResult> Update(int id, TaskModel task)
 {
     var existing = await _context.Tasks
@@ -59,7 +59,7 @@ public async Task<IActionResult> Update(int id, TaskModel task)
 }
 
 
-    [HttpsDelete("{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         var task = await _context.Tasks.FindAsync(id);
