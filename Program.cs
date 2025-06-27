@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularClient", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("https://new-task-manager.netlify.app/")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
