@@ -31,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAngularClient");
+app.UseCors("AllowNetlifyApp");
 app.MapControllers(); // <--- This enables your [ApiController] routes like /api/tasks
 
 // Optional test endpoint
