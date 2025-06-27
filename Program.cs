@@ -12,7 +12,7 @@ builder.Services.AddDbContext<TaskDbContext>(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngularClient", policy =>
+    options.AddPolicy("AllowNetlifyApp", policy =>
     {
         policy.WithOrigins("https://new-task-manager.netlify.app/")
               .AllowAnyHeader()
