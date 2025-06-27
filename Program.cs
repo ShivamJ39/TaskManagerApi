@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowNetlifyApp", policy =>
     {
-        policy.WithOrigins("https://new-task-manager.netlify.app/")
+        policy.WithOrigins("https://new-task-manager.netlify.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
