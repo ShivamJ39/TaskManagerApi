@@ -12,7 +12,7 @@ builder.Services.AddDbContext<TaskDbContext>(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowNetlifyApp", policy =>
+    options.AddPolicy("https://new-task-manager.netlify.app", policy =>
     {
         policy.WithOrigins("https://new-task-manager.netlify.app")
               .AllowAnyHeader()
@@ -35,7 +35,7 @@ app.UseHttpsRedirection();
 
 
 app.UseRouting();
-app.UseCors("AllowNetlifyApp");
+app.UseCors("https://new-task-manager.netlify.app");
 
 
 
